@@ -29,7 +29,7 @@
               @keyup.enter="submitForm()"
             ></el-input>
           </el-form-item>
-          <el-form-item prop="verifyCode">
+          <el-form-item prop="verifyCode" label="验证码">
             <el-input
               :prefix-icon="Warning"
               show-password

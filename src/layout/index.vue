@@ -21,7 +21,7 @@ let LayOutSettingStore = useLayOutSettingStore()
       <el-scrollbar>
         <el-menu
           :default-active="$route.path"
-          active-text-color="#fff"
+          active-text-color="#409EFF"
           :collapse="LayOutSettingStore.isCollapse"
           :router="true"
         >
