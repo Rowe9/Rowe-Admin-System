@@ -1,18 +1,54 @@
 // 二次封装axios
-import axios from 'axios'
 import { ElMessage } from 'element-plus'
 import useUserStore from '@/store/modules/user'
-let request = axios.create({
+import qs from 'qs'
+import axios, {
+  AxiosInstance,
+  AxiosError,
+  AxiosResponse,
+  AxiosRequestConfig,
+} from 'axios'
+
+declare module 'axios' {
+  export interface AxiosRequestConfig {
+    isReturnNativeData?: boolean
+    errorMode?: string
+    repeatRequest?: boolean
+  }
+}
+
+const pendingMap = new Map()
+
+function getRequestKey(config: AxiosRequestConfig) {
+  return (config.method || '') + config.url + '?' + qs.stringify(config?.data)
+}
+
+function setPendingMap(config: AxiosRequestConfig) {
+  const controller = new AbortController()
+  config.signal = controller.signal
+  const key = getRequestKey(config)
+  if (pendingMap.has(key)) {
+    pendingMap.get(key).abort()
+    pendingMap.delete(key)
+  } else {
+    pendingMap.set(key, controller)
+  }
+}
+
+const request = axios.create({
   baseURL: import.meta.env.VITE_APP_BASE_API,
   timeout: 5000,
 })
 
 request.interceptors.request.use(
   (config) => {
-    let userStore = useUserStore()
+    const userStore = useUserStore()
 
     if (userStore.token) {
       config.headers.token = userStore.token
+    }
+    if (!config.repeatRequest) {
+      setPendingMap(config)
     }
 
     return config
@@ -24,6 +60,9 @@ request.interceptors.request.use(
 
 request.interceptors.response.use(
   (response) => {
+    const config = response.config
+    const key = getRequestKey(config)
+    pendingMap.delete(key)
     if (response.status === 200) {
       return Promise.resolve(response.data)
     } else {
@@ -32,7 +71,7 @@ request.interceptors.response.use(
   },
   (error) => {
     let message = ''
-    let status = error.response.status
+    const status = error.response.status
     switch (status) {
       // 401: 未登录
       // 未登录则跳转登录页面，并携带当前页面的路径
