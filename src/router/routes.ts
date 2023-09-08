@@ -40,6 +40,30 @@ export const constantRoute = [
       icon: 'Platform',
     },
   },
+  // 富文本编辑器
+  {
+    path: '/editor',
+    component: () => import('@/layout/index.vue'),
+    name: 'Editor',
+    meta: {
+      title: '文本编辑器',
+      hidden: false,
+      icon: 'Goods',
+    },
+    redirect: '/editor/wangEditor',
+    children: [
+      {
+        path: '/editor/wangEditor',
+        component: () => import('@/views/editor/wangEditor/index.vue'),
+        name: 'wangEditor',
+        meta: {
+          title: 'wangEditor',
+          icon: 'ShoppingCart',
+          hidden: false,
+        },
+      },
+    ],
+  },
   {
     path: '/404',
     component: () => import('@/views/404/index.vue'),
