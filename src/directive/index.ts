@@ -1,6 +1,6 @@
 import { App } from 'vue'
 
-const modules = import.meta.glob('../directive/**/*.ts', {
+const modules: any = import.meta.glob('../directive/**/*.ts', {
   eager: true,
 })
 

@@ -2,12 +2,7 @@
 import { ElMessage } from 'element-plus'
 import useUserStore from '@/store/modules/user'
 import qs from 'qs'
-import axios, {
-  AxiosInstance,
-  AxiosError,
-  AxiosResponse,
-  AxiosRequestConfig,
-} from 'axios'
+import axios, { AxiosRequestConfig } from 'axios'
 
 declare module 'axios' {
   export interface AxiosRequestConfig {
@@ -41,7 +36,7 @@ const request = axios.create({
 })
 
 request.interceptors.request.use(
-  (config) => {
+  (config: any) => {
     const userStore = useUserStore()
 
     if (userStore.token) {
@@ -53,13 +48,13 @@ request.interceptors.request.use(
 
     return config
   },
-  (error) => {
+  (error: any) => {
     return Promise.reject(error)
   },
 )
 
 request.interceptors.response.use(
-  (response) => {
+  (response: any) => {
     const config = response.config
     const key = getRequestKey(config)
     pendingMap.delete(key)
@@ -69,7 +64,7 @@ request.interceptors.response.use(
       return Promise.reject(response.data)
     }
   },
-  (error) => {
+  (error: any) => {
     let message = ''
     const status = error.response.status
     switch (status) {

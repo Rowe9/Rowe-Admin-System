@@ -14,7 +14,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
   // 获取各种环境下对应的变量
   let env = loadEnv(mode, process.cwd())
   return {
-    base: './',
+    base: '/Rowe-Admin-System/',
     plugins: [
       VueSetupExtend(),
       DefineOptions(),
