@@ -71,7 +71,7 @@ let LayOutSettingStore = useLayOutSettingStore()
 }
 .el-header {
   background-color: #fff !important;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+  border-bottom: 1px solid rgba(216, 219, 225);
   z-index: 999;
 }
 .isCollapse {

@@ -11,6 +11,7 @@ import router from './router'
 import pinia from './store'
 import './permission'
 import { isHasButton } from './directive/has'
+import 'iconify-icon'
 
 const app = createApp(App)
 isHasButton(app)
