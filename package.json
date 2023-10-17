@@ -33,6 +33,7 @@
     "echarts": "^5.4.2",
     "echarts-liquidfill": "^3.1.0",
     "element-plus": "^2.3.4",
+    "gsap": "^3.12.2",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "pinia": "^2.1.3",

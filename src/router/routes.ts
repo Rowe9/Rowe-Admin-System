@@ -30,6 +30,7 @@ export const constantRoute = [
       },
     ],
   },
+  // screen
   {
     path: '/screen',
     component: () => import('@/views/screen/index.vue'),
@@ -39,6 +40,30 @@ export const constantRoute = [
       hidden: false,
       icon: 'Platform',
     },
+  },
+  // 仪表盘
+  {
+    path: '/dashboard',
+    component: () => import('@/layout/index.vue'),
+    name: 'Analysis',
+    meta: {
+      title: '仪表盘',
+      hidden: false,
+      icon: 'Platform',
+    },
+    redirect: '/dashboard/analysis',
+    children: [
+      {
+        path: '/dashboard/Analysis',
+        component: () => import('@/views/dashboard/Analysis.vue'),
+        name: 'Analysis',
+        meta: {
+          title: '分析',
+          icon: 'ShoppingCart',
+          hidden: false,
+        },
+      },
+    ],
   },
   // 富文本编辑器
   {
