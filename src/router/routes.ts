@@ -65,6 +65,30 @@ export const constantRoute = [
       },
     ],
   },
+  // 功能
+  {
+    path: '/feat',
+    component: () => import('@/layout/index.vue'),
+    name: 'feat',
+    meta: {
+      title: '功能',
+      hidden: false,
+      icon: 'Platform',
+    },
+    redirect: '/dashboard/analysis',
+    children: [
+      {
+        path: '/dashboard/Analysis',
+        component: () => import('@/views/dashboard/Analysis.vue'),
+        name: 'Analysis',
+        meta: {
+          title: '分析',
+          icon: 'ShoppingCart',
+          hidden: false,
+        },
+      },
+    ],
+  },
   // 富文本编辑器
   {
     path: '/editor',
