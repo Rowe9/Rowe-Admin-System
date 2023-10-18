@@ -4,7 +4,13 @@
       <iconify-icon :icon="iconName" class="iconItem"></iconify-icon>
     </div>
     <div class="text">
-      <div class="count">{{ count }}</div>
+      <!-- <div class="count">{{ count }}</div> -->
+      <GsapNumber
+        :to="count"
+        :from="0"
+        :duration="1"
+        class="count"
+      ></GsapNumber>
       <div class="title">{{ title }}</div>
     </div>
     <div class="rate">

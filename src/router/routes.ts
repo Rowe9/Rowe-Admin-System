@@ -75,14 +75,14 @@ export const constantRoute = [
       hidden: false,
       icon: 'Platform',
     },
-    redirect: '/dashboard/analysis',
+    redirect: '/feat/download',
     children: [
       {
-        path: '/dashboard/Analysis',
-        component: () => import('@/views/dashboard/Analysis.vue'),
-        name: 'Analysis',
+        path: '/feat/download',
+        component: () => import('@/views/feat/download.vue'),
+        name: 'Download',
         meta: {
-          title: '分析',
+          title: '下载',
           icon: 'ShoppingCart',
           hidden: false,
         },
@@ -113,6 +113,7 @@ export const constantRoute = [
       },
     ],
   },
+  // 404
   {
     path: '/404',
     component: () => import('@/views/404/index.vue'),
