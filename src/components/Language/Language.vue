@@ -1,6 +1,3 @@
-import { Finished } from '@element-plus/icons-vue/dist/types'; import { Finished
-} from '@element-plus/icons-vue/dist/types';
-
 <template>
   <div>
     <el-dropdown @command="handleCommand">

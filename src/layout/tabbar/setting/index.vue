@@ -1,4 +1,6 @@
 <template>
+  <!-- 全局搜索 -->
+  <SiteSearch></SiteSearch>
   <!-- 中英文切换 -->
   <Language></Language>
   <!-- 刷新 -->
@@ -61,6 +63,7 @@ let layoutSettingStore = useLayOutSettingStore()
 import useUserStore from '@/store/modules/user'
 import { useRouter, useRoute } from 'vue-router'
 import Language from '@/components/Language/Language.vue'
+import SiteSearch from '@/components/SiteSearch/SiteSearch.vue'
 let $router = useRouter()
 let $route = useRoute()
 let userStore = useUserStore()
