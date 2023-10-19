@@ -12,10 +12,12 @@ import pinia from './store'
 import './permission'
 import { isHasButton } from './directive/has'
 import 'iconify-icon'
+import i18n from './locales'
 
 const app = createApp(App)
 isHasButton(app)
 app.use(globalComponent)
 app.use(router)
 app.use(pinia)
+app.use(i18n)
 app.mount('#app')

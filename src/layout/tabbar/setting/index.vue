@@ -1,4 +1,53 @@
-\
+<template>
+  <!-- 中英文切换 -->
+  <Language></Language>
+  <!-- 刷新 -->
+  <el-button circle size="small" :icon="Refresh" @click="updateRefsh" />
+  <!-- 全屏 -->
+  <el-button circle size="small" :icon="FullScreen" @click="fullScreen" />
+  <!-- 设置 -->
+  <el-popover placement="bottom" title="主题设置" :width="200" trigger="hover">
+    <el-form>
+      <el-form-item label="主题颜色">
+        <el-color-picker
+          v-model="color"
+          show-alpha
+          :predefine="predefineColors"
+          size="small"
+          @change="setColor"
+        />
+      </el-form-item>
+      <el-form-item label="暗黑模式">
+        <el-switch
+          v-model="dark"
+          size="small"
+          inline-prompt
+          active-icon="MoonNight"
+          inactive-icon="Sunny"
+          @change="changeDark"
+        />
+      </el-form-item>
+    </el-form>
+    <template #reference>
+      <el-button circle size="small" :icon="Setting" />
+    </template>
+  </el-popover>
+
+  <img :src="userStore.avatar" alt="" />
+  <el-dropdown>
+    <span class="el-dropdown-link" style="cursor: pointer">
+      {{ userStore.username }}
+      <el-icon class="el-icon--right">
+        <arrow-down />
+      </el-icon>
+    </span>
+    <template #dropdown>
+      <el-dropdown-menu>
+        <el-dropdown-item @click="logout">退出登录</el-dropdown-item>
+      </el-dropdown-menu>
+    </template>
+  </el-dropdown>
+</template>
 <script setup lang="ts">
 import { ref } from 'vue'
 import {
@@ -11,6 +60,7 @@ import useLayOutSettingStore from '@/store/modules/setting'
 let layoutSettingStore = useLayOutSettingStore()
 import useUserStore from '@/store/modules/user'
 import { useRouter, useRoute } from 'vue-router'
+import Language from '@/components/Language/Language.vue'
 let $router = useRouter()
 let $route = useRoute()
 let userStore = useUserStore()
@@ -61,51 +111,6 @@ const setColor = () => {
   html.style.setProperty('--el-color-primary', color.value)
 }
 </script>
-<template>
-  <el-button circle size="small" :icon="Refresh" @click="updateRefsh" />
-  <el-button circle size="small" :icon="FullScreen" @click="fullScreen" />
-  <el-popover placement="bottom" title="主题设置" :width="200" trigger="hover">
-    <el-form>
-      <el-form-item label="主题颜色">
-        <el-color-picker
-          v-model="color"
-          show-alpha
-          :predefine="predefineColors"
-          size="small"
-          @change="setColor"
-        />
-      </el-form-item>
-      <el-form-item label="暗黑模式">
-        <el-switch
-          v-model="dark"
-          size="small"
-          inline-prompt
-          active-icon="MoonNight"
-          inactive-icon="Sunny"
-          @change="changeDark"
-        />
-      </el-form-item>
-    </el-form>
-    <template #reference>
-      <el-button circle size="small" :icon="Setting" />
-    </template>
-  </el-popover>
-
-  <img :src="userStore.avatar" alt="" />
-  <el-dropdown>
-    <span class="el-dropdown-link" style="cursor: pointer">
-      {{ userStore.username }}
-      <el-icon class="el-icon--right">
-        <arrow-down />
-      </el-icon>
-    </span>
-    <template #dropdown>
-      <el-dropdown-menu>
-        <el-dropdown-item @click="logout">退出登录</el-dropdown-item>
-      </el-dropdown-menu>
-    </template>
-  </el-dropdown>
-</template>
 <style lang="scss" scoped>
 img {
   width: 24px;

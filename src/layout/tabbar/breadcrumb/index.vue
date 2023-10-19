@@ -25,7 +25,7 @@ const changeIcon = () => {
         <component :is="item.meta.icon"></component>
       </el-icon>
       <span style="margin: 0 5px; vertical-align: middle">
-        {{ item.meta.title }}
+        {{ $t(`route.${item.meta.title}`) }}
       </span>
     </el-breadcrumb-item>
   </el-breadcrumb>
