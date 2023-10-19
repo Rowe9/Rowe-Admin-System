@@ -7,15 +7,13 @@
     "signUp": "注册"
   },
   "route": {
-    "home":"首页",
-    "Screen":"Screen",
-    "Dashboard":"仪表盘",
-    "Analysis":"分析",
-    "feat":"功能",
-    "Download":"下载",
-    "Editor":"文本编辑器",
-    "wangEditor":"文本编辑器"
-
-
+    "home": "首页",
+    "Screen": "Screen",
+    "Dashboard": "仪表盘",
+    "Analysis": "分析",
+    "feat": "功能",
+    "Download": "下载",
+    "Editor": "文本编辑器",
+    "wangEditor": "文本编辑器"
   }
 }

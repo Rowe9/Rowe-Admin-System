@@ -7,13 +7,13 @@
     "signUp": "sign out"
   },
   "route": {
-    "home":"home",
-    "Screen":"Screen",
-    "Dashboard":"Dashboard",
-    "Analysis":"Analysis",
-    "feat":"feat",
-    "Download":"Download",
-    "Editor":"Editor",
-    "wangEditor":"wangEditor"
+    "home": "home",
+    "Screen": "Screen",
+    "Dashboard": "Dashboard",
+    "Analysis": "Analysis",
+    "feat": "feat",
+    "Download": "Download",
+    "Editor": "Editor",
+    "wangEditor": "wangEditor"
   }
 }
