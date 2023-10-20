@@ -45,7 +45,7 @@ declare module '@vue/runtime-core' {
     MyEchart: typeof import('./src/components/MyEcharts/MyEchart.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SiteSearch: typeof import('./src/components/SiteSearch/SiteSearch.vue')['default']
+    SiteSearch: typeof import('./src/components/SiteSearch/index.vue')['default']
     Src: typeof import('./src/components/Category/src/index.vue')['default']
     VerifyCode: typeof import('./src/components/VerifyCode/index.vue')['default']
   }

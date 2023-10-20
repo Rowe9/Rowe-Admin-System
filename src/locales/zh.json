@@ -15,16 +15,15 @@
     "Download": "下载",
     "Editor": "文本编辑器",
     "wangEditor": "文本编辑器",
-    "AclManage":"权限管理",
-    "UserManage":"用户管理",
-    "RoleManage":"角色管理",
-    "PermissionManage":"菜单管理",
+    "AclManage": "权限管理",
+    "UserManage": "用户管理",
+    "RoleManage": "角色管理",
+    "PermissionManage": "菜单管理",
 
-    "ProductManage":"商品管理",
-    "TrademarkManage":"品牌管理",
-    "AttrManage":"属性管理",
-    "Spu":"Spu",
-    "Sku":"Sku"
-
+    "ProductManage": "商品管理",
+    "TrademarkManage": "品牌管理",
+    "AttrManage": "属性管理",
+    "Spu": "Spu",
+    "Sku": "Sku"
   }
 }
