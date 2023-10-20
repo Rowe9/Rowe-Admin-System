@@ -21,9 +21,14 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+
+let search = ref('')
 let visible = ref(false)
 let keyword = ref()
 
+function onOpen() {
+  console.log('111')
+}
 function onClose() {
   keyword.value = ''
 }

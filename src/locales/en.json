@@ -14,6 +14,17 @@
     "feat": "feat",
     "Download": "Download",
     "Editor": "Editor",
-    "wangEditor": "wangEditor"
+    "wangEditor": "wangEditor",
+
+    "AclManage":"AclManage",
+    "UserManage":"UserManage",
+    "RoleManage":"RoleManage",
+    "PermissionManage":"PermissionManage",
+
+    "ProductManage":"ProductManage",
+    "TrademarkManage":"TrademarkManage",
+    "AttrManage":"AttrManage",
+    "Spu":"Spu",
+    "Sku":"Sku"
   }
 }
